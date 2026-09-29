@@ -1,0 +1,587 @@
+/*
+ * KTMS — Kabaddi Tournament Management System
+ * Layered on top of Bootstrap 5; only the pieces Bootstrap does not give us.
+ */
+
+:root {
+    --ktms-navy: #0b1533;
+    --ktms-navy-soft: #16224a;
+    --ktms-accent: #ff6b1a;
+    --ktms-accent-dark: #e25510;
+    --ktms-raid: #ffb020;
+    --ktms-surface: #f4f6fb;
+    --ktms-border: #e3e8f2;
+}
+
+body {
+    background-color: var(--ktms-surface);
+    color: #1d2439;
+}
+
+/* ------------------------------------------------------------------ nav */
+
+.navbar-ktms {
+    background: linear-gradient(90deg, var(--ktms-navy) 0%, var(--ktms-navy-soft) 100%);
+}
+
+.navbar-ktms .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.navbar-ktms .nav-link {
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 500;
+}
+
+.navbar-ktms .nav-link:hover,
+.navbar-ktms .nav-link:focus {
+    color: #fff;
+}
+
+.navbar-ktms .nav-link.active {
+    color: #fff;
+    box-shadow: inset 0 -3px 0 var(--ktms-accent);
+}
+
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--ktms-accent);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+/* ------------------------------------------------------------------ cards */
+
+.card {
+    border: 1px solid var(--ktms-border);
+    border-radius: 14px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--ktms-border);
+    font-weight: 600;
+}
+
+.page-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.page-header .subtitle {
+    color: #6b7590;
+    margin: 0.15rem 0 0;
+    font-size: 0.925rem;
+}
+
+/* ------------------------------------------------------------------ stats */
+
+.stat-tile {
+    background: #fff;
+    border: 1px solid var(--ktms-border);
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    height: 100%;
+}
+
+.stat-tile .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7b849e;
+    font-weight: 600;
+}
+
+.stat-tile .stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ktms-navy);
+}
+
+.stat-tile .stat-meta {
+    font-size: 0.8rem;
+    color: #8b93a9;
+}
+
+/* ------------------------------------------------------------------ team identity */
+
+.team-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid var(--ktms-border);
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+
+.team-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.team-logo.initials {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    border: none;
+}
+
+.jersey-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0 0.4rem;
+    border-radius: 8px;
+    background: var(--ktms-navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* ------------------------------------------------------------------ operator consoles */
+
+.console-shell {
+    background: var(--ktms-navy);
+    min-height: 100vh;
+    color: #eaeefb;
+}
+
+.console-shell .card {
+    background: #131e42;
+    border-color: #26355f;
+    color: #eaeefb;
+}
+
+.console-shell .card-header {
+    background: #1a2750;
+    border-color: #26355f;
+    color: #fff;
+}
+
+.console-shell .form-control,
+.console-shell .form-select {
+    background-color: #0e1836;
+    border-color: #2c3a66;
+    color: #eaeefb;
+}
+
+.console-shell .form-control:focus,
+.console-shell .form-select:focus {
+    background-color: #0e1836;
+    border-color: var(--ktms-accent);
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(255, 107, 26, 0.2);
+}
+
+.console-shell .form-check-input {
+    background-color: #0e1836;
+    border-color: #2c3a66;
+}
+
+.console-shell .text-muted {
+    color: #9aa5c4 !important;
+}
+
+.console-shell hr {
+    border-color: #26355f;
+}
+
+.score-pad {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.btn-score {
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.7rem 0.5rem;
+}
+
+.console-score {
+    font-size: 3.25rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+}
+
+.raid-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.raid-indicator.on {
+    background: rgba(255, 176, 32, 0.16);
+    color: var(--ktms-raid);
+}
+
+.raid-indicator.off {
+    background: rgba(154, 165, 196, 0.16);
+    color: #9aa5c4;
+}
+
+.player-pick {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 0.5rem;
+}
+
+.player-pick .btn {
+    text-align: left;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.6rem;
+    line-height: 1.25;
+}
+
+.player-pick .btn small {
+    display: block;
+    font-size: 0.7rem;
+    opacity: 0.75;
+}
+
+.player-pick .btn.is-out {
+    opacity: 0.45;
+}
+
+/* ------------------------------------------------------------------ clocks */
+
+.clock-face {
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.clock-game {
+    font-size: 4.5rem;
+    color: #fff;
+}
+
+.clock-raid {
+    font-size: 4.5rem;
+    color: var(--ktms-raid);
+}
+
+.clock-raid.danger {
+    color: #ff4d4d;
+    animation: ktms-pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes ktms-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+}
+
+.clock-running-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #33d17a;
+    margin-right: 0.35rem;
+}
+
+.clock-running-dot.paused {
+    background: #9aa5c4;
+}
+
+/* ------------------------------------------------------------------ timeline */
+
+.timeline {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 0.65rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed rgba(148, 160, 196, 0.25);
+    font-size: 0.875rem;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-clock {
+    flex: 0 0 3.2rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+/* ------------------------------------------------------------------ broadcast display */
+
+.broadcast {
+    background: radial-gradient(circle at 50% 0%, #1a2a5e 0%, #070d20 65%);
+    min-height: 100vh;
+    color: #fff;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+.broadcast-tag {
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.78rem;
+    color: #9fb0dd;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff3b3b;
+    margin-right: 0.4rem;
+    animation: ktms-pulse 1.4s ease-in-out infinite;
+}
+
+.scoreboard {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.scoreboard-team {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.scoreboard-team.away {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.scoreboard-team .team-name {
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.scoreboard-team .team-meta {
+    color: #9fb0dd;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.scoreboard-score {
+    font-size: 6.5rem;
+    font-weight: 900;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.scoreboard-centre {
+    text-align: center;
+    min-width: 190px;
+}
+
+.scoreboard-centre .game-clock {
+    font-size: 3.4rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+}
+
+.raiding-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--ktms-accent);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Seven dots per side showing who is still standing. */
+.court-dots {
+    display: inline-flex;
+    gap: 0.3rem;
+}
+
+.court-dots.away {
+    flex-direction: row-reverse;
+}
+
+.court-dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.court-dot.filled {
+    background: #35d07f;
+    box-shadow: 0 0 9px rgba(53, 208, 127, 0.7);
+}
+
+.raid-clock-ring {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: conic-gradient(var(--ktms-raid) calc(var(--pct) * 1%), rgba(255, 255, 255, 0.12) 0);
+    position: relative;
+}
+
+.raid-clock-ring::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border-radius: 50%;
+    background: #0a1128;
+}
+
+.raid-clock-ring span {
+    position: relative;
+    font-size: 2.6rem;
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+}
+
+.raid-clock-ring.danger {
+    --ring-colour: #ff4d4d;
+    background: conic-gradient(#ff4d4d calc(var(--pct) * 1%), rgba(255, 255, 255, 0.12) 0);
+}
+
+.broadcast-feed {
+    background: rgba(10, 18, 44, 0.75);
+    border: 1px solid rgba(159, 176, 221, 0.16);
+    border-radius: 16px;
+}
+
+.broadcast-feed .timeline-item {
+    border-bottom-color: rgba(159, 176, 221, 0.14);
+}
+
+/* ------------------------------------------------------------------ tables */
+
+.table-ktms thead th {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7590;
+    border-bottom-width: 1px;
+    white-space: nowrap;
+}
+
+.table-ktms td {
+    vertical-align: middle;
+}
+
+.table-ktms tbody tr:hover {
+    background-color: #f8faff;
+}
+
+.rank-cell {
+    font-weight: 700;
+    color: #8b93a9;
+    width: 3rem;
+}
+
+/* ------------------------------------------------------------------ misc */
+
+.empty-state {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: #7b849e;
+}
+
+.empty-state i {
+    font-size: 2.25rem;
+    opacity: 0.4;
+    display: block;
+    margin-bottom: 0.6rem;
+}
+
+.mini-bar {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--ktms-border);
+    overflow: hidden;
+}
+
+.mini-bar span {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--ktms-accent);
+}
+
+.toast-stack {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1080;
+    width: min(360px, calc(100vw - 2rem));
+}
+
+@media (max-width: 991.98px) {
+    .scoreboard {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .scoreboard-team,
+    .scoreboard-team.away {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .scoreboard-score {
+        font-size: 4.5rem;
+    }
+
+    .clock-game,
+    .clock-raid {
+        font-size: 3.25rem;
+    }
+}
+
+@media print {
+    .navbar, .btn, .no-print { display: none !important; }
+    body { background: #fff; }
+    .card { border: 1px solid #ccc; }
+}
