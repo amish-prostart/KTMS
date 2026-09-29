@@ -55,21 +55,19 @@ WORKDIR /var/www/html
 
 
 # =========================
-# 4. Laravel dependencies
+# 4. Copy Laravel project
 # =========================
-COPY composer.json composer.lock ./
+COPY . .
 
+
+# =========================
+# 5. Install Laravel dependencies
+# =========================
 RUN composer install \
     --no-dev \
     --optimize-autoloader \
     --no-interaction \
     --prefer-dist
-
-
-# =========================
-# 5. Copy Laravel project
-# =========================
-COPY . .
 
 
 # =========================
